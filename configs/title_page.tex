@@ -48,4 +48,17 @@
 %     };
 %   \end{tikzpicture}
 % }
-
+% \titlegraphic{
+%   \vspace*{-3cm}
+%   \includegraphics[height=1.5cm]{logos/uet_logo.png}
+% }
+\titlegraphic{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north, yshift=-0.5cm]
+      at (current page.north)
+      {\includegraphics[height=1.2cm]{logos/uet_logo.png}};
+    % \node[anchor=north east, xshift=-0.5cm, yshift=-0.5cm]
+    %   at (current page.north east)
+    %   {\includegraphics[height=1.2cm]{logos/logo_uit.png}};
+  \end{tikzpicture}%
+}

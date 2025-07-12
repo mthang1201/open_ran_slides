@@ -1,0 +1,162 @@
+\begin{frame}{RAN tổng thể}
+  Mạng truy cập vô tuyến (RAN) là một trong những thành phần chính của mạng di động. RAN kết nối thiết bị user equipment (UE) với core network (CN)
+
+  \vspace{0.3cm}
+  
+  Việc triển khai RAN trong thực tế được gọi là Base Station (BS). Hai đơn vị chính của BS là Radio Unit (RU) và Baseband Unit (BBU). RU chịu trách nhiệm truyền và nhận. Trong khi đó, BBU chịu trách nhiệm quản lý vô tuyến, sử dụng tài nguyên và các hoạt động khác.  Thành phần RAN đã phát triển qua nhiều năm như một giải pháp cho số lượng thuê bao ngày càng tăng và nhu cầu ngày càng cao của người dùng.
+
+\end{frame}
+
+\begin{frame}{D-RAN}
+  \begin{columns}[T] % canh top đồng bộ
+    % ——————— Cột chữ ———————
+    \column{0.7\textwidth}
+      Phiên bản đầu tiên của RAN được trang bị một hệ thống tích hợp giữa RU và BBU. BBU thường được lắp đặt trong một căn phòng ngay bên dưới BS. RU có thể được lắp đặt trong phòng hoặc trên đỉnh tháp, cho phép RU hỗ trợ kết nối trong một khu vực rộng lớn. Trong bối cảnh này, RU cũng có thể được gọi là RU từ xa (RRU).
+      \begin{itemize}
+        \item Khoảng cách giữa RU/RRU và BBU đều ngắn.
+        \item Việc triển khai D-RAN rất đơn giản vì nó không yêu cầu giao diện tốc độ cao giữa RU và BBU.
+        \item Mạng sẽ dày đặc hơn khi số lượng UE tăng lên và nhiều BS được xây dựng hơn.
+        \item Mỗi RAN hoạt động độc lập.
+      \end{itemize}
+
+    % ——————— Cột hình ———————
+    \column{0.3\textwidth}
+      \centering
+      \includegraphics[height=4cm, keepaspectratio]{picture/D-RAN.PNG}
+      \\[1ex]
+      \small Kiến trúc D-RAN hay RAN truyền thống
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Vấn đề của D-RAN}
+  \begin{columns}[T] % canh top đồng bộ
+    % ——————— Cột chữ ———————
+    \column{0.4\textwidth}
+      \vspace{0.6cm}
+      Các nhà khai thác mạng di động (MNO) đã bắt đầu tìm kiếm giải pháp để giảm Chi phí vận hành (OpEx) do chi phí đáng kể cho việc thuê không gian cho BS và hệ thống làm mát cần thiết để vận hành mạng, cuối cùng dẫn đến đề xuất về khuôn khổ C-RAN.
+
+    % ——————— Cột hình ———————
+    \column{0.6\textwidth}
+      \centering
+      \includegraphics[height=5cm, keepaspectratio]{picture/D-RAN_archi.png}
+      \\[1ex]
+      \small Mô phỏng 
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{C-RAN}
+  \begin{columns}[T] % canh top đồng bộ
+    % ——————— Cột chữ ———————
+    \column{0.7\textwidth}
+      C-RAN có thể hiểu là của Centralized-RAN hoặc Cloud-RAN. Tuy nhiên, cả hai đều có cùng một ý tưởng: nhóm các BBU vào một nhóm
+      \begin{itemize}
+        \item RAN tập trung được đề xuất để giảm chi phí thuê không gian và mức tiêu thụ điện năng của máy điều hòa không khí của BBU bằng cách nhóm các BBU từ các BS khác nhau vào một vị trí vật lý duy nhất
+        \item Fronthaul (FH) là liên kết số hóa giữa các Remote Radio Unit (RRU/RU) đặt tại site và BBU pool 
+        \item Mặc dù giảm OpEx tổng thể, RAN tập trung yêu cầu FH phải có băng thông cao và yêu cầu độ trễ thời gian thấp
+      \end{itemize}
+
+    % ——————— Cột hình ———————
+    \column{0.3\textwidth}
+      \centering
+      \includegraphics[height=4cm, keepaspectratio]{picture/C-RAN.png}
+      \\[1ex]
+      \small C-RAN 
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Khác biệt giữa các biến thể C-RAN}
+  \begin{columns}[T] % canh top đồng bộ
+    % ——————— Cột chữ ———————
+    \column{0.6\textwidth}
+      Sự khác biệt cơ bản giữa Centralized RAN và Cloud RAN nằm ở hệ thống cloud. Trong Centralized RAN, các BBU được tập hợp tại một vị trí vật lý còn trong Cloud RAN các BBU từ mỗi BS được tập hợp tại một máy chủ đám mây.
+      \begin{itemize}
+        \item Cloud RAN giúp dễ dàng thay đổi số lượng BBU theo thời gian.
+        \item Cloud cũng tăng khả năng xử lý băng tần cơ sở bằng cách khai thác các bộ xử lý đa năng
+        \item Cloud RAN tiếp tục giảm mức tiêu thụ năng lượng, tăng thông lượng mạng, cải thiện khả năng mở rộng mạng, giảm Chi phí vốn (CapEx) và giảm OpEx
+      \end{itemize}
+
+    % ——————— Cột hình ———————
+    \column{0.4\textwidth}
+      \centering
+      \vspace{0.3cm}
+      \includegraphics[height=4cm, keepaspectratio]{picture/diff_C-RAN.png}
+      \\[1ex]
+      \small C-RAN 
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Vấn đề của C-RAN}
+  C-RAN đã được công nhận là một trong những công nghệ tiềm năng nhất để đáp ứng các yêu cầu kỹ thuật 5G của truy cập vô tuyến. 
+
+
+  \vspace{0.3cm}
+  
+  
+  Tuy nhiên, nó vẫn còn những hạn chế, chẳng hạn như chi phí FH khổng lồ, vấn đề về độ tin cậy, bảo mật và lỗi điểm đơn. Những vấn đề này đã buộc khuôn khổ C-RAN phải chuyển trọng tâm sang các công nghệ điện toán tiên tiến. Một số công nghệ tiên tiến này bao gồm ảo hóa. Ảo hóa là chìa khóa để chuyển đổi từ C-RAN sang vRAN.
+
+\end{frame}
+
+\begin{frame}{vRAN}
+  \begin{columns}[T] % canh top đồng bộ
+    % ——————— Cột chữ ———————
+    \column{0.6\textwidth}
+    \vspace{0.4cm}
+      Ảo hóa có nghĩa là tạo các phiên bản ảo trên phần cứng vật lý trừu tượng. Trong bối cảnh của vRAN, các phiên bản ảo là tài nguyên mạng. Ảo hóa trong RAN có liên quan chặt chẽ đến các khái niệm như mạng được xác định bằng phần mềm (SDN) và ảo hóa chức năng mạng (NFV). Nói một cách đơn giản, vRAN mang ảo hóa đến với Cloud RAN. Trong máy chủ đám mây, nhiều BBU ảo (vBBU) được triển khai. vBBU có thể được triển khai trên Máy ảo (VM) hoặc vùng chứa.
+
+    % ——————— Cột hình ———————
+    \column{0.4\textwidth}
+      \centering
+      \vspace{0.5cm}
+      \includegraphics[height=6cm, keepaspectratio]{picture/vRan.png}
+      \\[1ex]
+      % \small C-RAN 
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Đột phá của vRAN}
+  Hệ thống này cho phép phối hợp và mở rộng tài nguyên trong vRAN. Việc dễ dàng tăng và giảm quy mô tài nguyên mạng dẫn đến : 
+  \begin{itemize}
+    \item Mức tiêu thụ năng lượng thấp hơn.
+    \item Khả năng mở rộng dung lượng động.
+    \item Sử dụng hiệu quả tài nguyên mạng.
+    \item Cải thiện độ tin cậy của dịch vụ và chất lượng dịch vụ tốt hơn.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  Khoảng một nửa tài nguyên xử lý dữ liệu cần thiết có thể được giảm khi ảo hóa được áp dụng trên Cloud RAN .
+
+\end{frame}
+
+\begin{frame}{Vấn đề của vRAN}
+  Nhìn chung vRAN giảm thiểu chi phí vận hành và đầu tư cho các nhà mạng di động (MNO). 
+  
+  
+  Tuy nhiên 
+  \begin{itemize}
+    \item vRAN phải xử lý các đặc tính của kênh không dây.
+    \item Tài nguyên mạng phải được chia sẻ và phân bổ công bằng và hiệu quả cho các RRU khác nhau.
+    \item Cân nhắc các yêu cầu về QoS
+  \end{itemize}
+  % QoS là  (Quality of Service) là “Chất lượng Dịch vụ” trong mạng viễn thông, dùng để chỉ khả năng mạng đảm bảo các thông số hiệu năng phù hợp với yêu cầu của từng loại ứng dụng.  Cụ thể, QoS thường quản lý và ưu tiên các đặc tính sau:
+  % Độ trễ (Latency): Thời gian truyền gói tin từ nguồn đến đích. Các ứng dụng thời gian thực (voice, video call) yêu cầu độ trễ rất thấp.
+
+  % Độ trễ biến thiên (Jitter): Độ không đồng nhất về thời gian đến của các gói tin; jitter cao có thể làm gián đoạn trải nghiệm thoại hoặc video.
+
+  % Tỉ lệ mất gói (Packet Loss): Tỉ lệ gói tin không tới đích; mất gói cao ảnh hưởng xấu đến chất lượng âm thanh, hình ảnh.
+
+  % Thông lượng (Throughput): Lượng dữ liệu truyền thành công trên một đơn vị thời gian; cần cao đối với ứng dụng tải xuống hoặc streaming.
+
+  % Tính ổn định (Reliability): Khả năng duy trì các chỉ số trên liên tục theo thời gian.
+
+  % Trong bối cảnh vRAN, QoS đặc biệt quan trọng vì:
+
+  % Chia sẻ tài nguyên: Nhiều RRU (site) phải dùng chung tài nguyên ảo hóa (CPU, bộ nhớ, đường truyền), nên cần cơ chế điều phối ưu tiên để mỗi luồng dữ liệu (voice, video, IoT…) đạt chỉ số QoS phù hợp.
+
+  % Đa dịch vụ: Mạng 5G/vRAN phải hỗ trợ từ dịch vụ băng thông cao (eMBB) đến dịch vụ độ trễ thấp (URLLC), mỗi loại có ngưỡng QoS khác nhau.
+
+  % Phức tạp điều khiển: Để đảm bảo QoS, hệ thống vRAN phải liên tục giám sát và tự động điều chỉnh phân bổ tài nguyên, dẫn đến độ phức tạp trong thiết kế và vận hành.
+
+  Điều này khiến hệ thống vRAN trở nên phức tạp đáng kể. vRAN cũng vẫn sử dụng các giao diện độc quyền, hạn chế khả năng tương tác và môi trường đa nhà cung cấp. Do đó, việc phụ thuộc vào nhà cung cấp và tình trạng độc quyền khiến giá thiết bị mạng không thể rẻ hơn.
+\end{frame}
