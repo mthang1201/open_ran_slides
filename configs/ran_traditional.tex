@@ -51,9 +51,9 @@
     \column{0.7\textwidth}
       C-RAN có thể hiểu là của Centralized-RAN hoặc Cloud-RAN. Tuy nhiên, cả hai đều có cùng một ý tưởng: nhóm các BBU vào một nhóm
       \begin{itemize}
-        \item RAN tập trung được đề xuất để giảm chi phí thuê không gian và mức tiêu thụ điện năng của máy điều hòa không khí của BBU bằng cách nhóm các BBU từ các BS khác nhau vào một vị trí vật lý duy nhất
-        \item Fronthaul (FH) là liên kết số hóa giữa các Remote Radio Unit (RRU/RU) đặt tại site và BBU pool 
-        \item Mặc dù giảm OpEx tổng thể, RAN tập trung yêu cầu FH phải có băng thông cao và yêu cầu độ trễ thời gian thấp
+        \item C-RAN được đề xuất để giảm chi phí thuê không gian và mức tiêu thụ điện năng của máy điều hòa không khí của BBU bằng cách nhóm các BBU từ các BS khác nhau vào một vị trí vật lý duy nhất
+        \item Fronthaul (FH) là liên kết số hóa giữa các Remote Radio Unit (RRU/RU) đặt tại site và BBU pool
+        \item Mặc dù giảm OpEx tổng thể, C-RAN yêu cầu FH phải có băng thông cao và yêu cầu độ trễ thời gian thấp
       \end{itemize}
 
     % ——————— Cột hình ———————
@@ -65,7 +65,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Khác biệt giữa các biến thể C-RAN}
+\begin{frame}{Khác biệt giữa Centralized và Cloud RAN}
   \begin{columns}[T] % canh top đồng bộ
     % ——————— Cột chữ ———————
     \column{0.6\textwidth}
@@ -159,4 +159,46 @@
   % Phức tạp điều khiển: Để đảm bảo QoS, hệ thống vRAN phải liên tục giám sát và tự động điều chỉnh phân bổ tài nguyên, dẫn đến độ phức tạp trong thiết kế và vận hành.
 
   Điều này khiến hệ thống vRAN trở nên phức tạp đáng kể. vRAN cũng vẫn sử dụng các giao diện độc quyền, hạn chế khả năng tương tác và môi trường đa nhà cung cấp. Do đó, việc phụ thuộc vào nhà cung cấp và tình trạng độc quyền khiến giá thiết bị mạng không thể rẻ hơn.
+\end{frame}
+
+\begin{frame}{Open RAN}
+  \begin{columns}[T]
+    % ——————— Cột chữ ———————
+    \column{0.6\textwidth}
+    \vspace{0.4cm}
+    Open RAN là một kiến trúc RAN mới, được xây dựng dựa trên nguyên tắc: \textbf{phân tách (disaggregation)} và \textbf{tương tác (interoperability)}:
+
+    \begin{itemize}
+      \item \textbf{Disaggregation}: Phần mềm mạng được tách rời khỏi phần cứng.
+      \item \textbf{Interoperability}: Các thành phần từ nhiều nhà cung cấp có thể hoạt động cùng nhau.
+    \end{itemize}
+
+    Khác với các thế hệ RAN trước vốn sử dụng hệ thống độc quyền một nhà cung cấp, Open RAN sử dụng giao diện mở và phần mềm độc lập với phần cứng, có thể triển khai trên bộ xử lý phổ thông.
+
+    % ——————— Cột hình ———————
+    \column{0.4\textwidth}
+    \centering
+    \vspace{0.5cm}
+    \includegraphics[height=6cm, keepaspectratio]{picture/oRan.png}
+    \\[1ex]
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Lợi ích và đột phá của Open RAN}
+  Open RAN mang lại nhiều lợi ích thiết thực cho nhà mạng:
+  \begin{itemize}
+    \item Cho phép triển khai kiến trúc đa nhà cung cấp.
+    \item Giảm chi phí đầu tư và chi phí vận hành
+    \item Tăng tốc độ triển khai dịch vụ với mô hình CI/CD.
+    \item Tích hợp AI/ML để tự động hóa, phát hiện và xử lý sự cố.
+    \item Cải thiện khả năng mở rộng và thích ứng QoS.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  Ví dụ thực tiễn -- \textbf{Rakuten Mobile (Nhật Bản)}:
+  \begin{itemize}
+    \item Mạng thương mại toàn quốc đầu tiên triển khai Open RAN.
+    \item Đạt điểm hiệu suất \textbf{920/1000} theo đánh giá Umlaut.
+    \item Tiết kiệm tới \textbf{50\% chi phí} khi triển khai mạng 5G so với RAN truyền thống.
+  \end{itemize}
 \end{frame}
