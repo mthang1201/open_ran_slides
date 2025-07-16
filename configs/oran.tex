@@ -44,11 +44,11 @@
     % ——————— Cột chữ ———————
     \column{0.6\textwidth}
     \vspace{0.4cm}
-    Open RAN là một kiến trúc RAN mới, được xây dựng dựa trên nguyên tắc: \textbf{phân tách (disaggregation)} và \textbf{tương tác (interoperability)}:
+    Open RAN là một kiến trúc RAN mới, được xây dựng dựa trên nguyên tắc: \textbf{phân tách (disaggregation)} và \textbf{giao diện mở (Open Interfaces)}:
 
     \begin{itemize}
       \item \textbf{Disaggregation}: Phần mềm mạng được tách rời khỏi phần cứng.
-      \item \textbf{Interoperability}: Các thành phần từ nhiều nhà cung cấp có thể hoạt động cùng nhau.
+      \item \textbf{Open Interfaces}: Các thành phần từ nhiều nhà cung cấp có thể hoạt động cùng nhau.
     \end{itemize}
 
     Khác với các thế hệ RAN trước vốn sử dụng hệ thống độc quyền một nhà cung cấp, Open RAN sử dụng giao diện mở và phần mềm độc lập với phần cứng, có thể triển khai trên bộ xử lý phổ thông.
@@ -58,6 +58,50 @@
     \centering
     \vspace{0.5cm}
     \includegraphics[height=6cm, keepaspectratio]{picture/oRan.png}
+    \\[1ex]
+  \end{columns}
+\end{frame} 
+
+% \begin{frame}{Nguyên tắc của Open RAN}
+%   \begin{columns}[T]
+%     % ——————— Cột chữ ———————
+%     \column{0.6\textwidth}
+%     Nhà cung cấp phát triển phần mềm của họ để tương thích với phần cứng từ các nhà cung cấp khác nhau. Thông qua việc phân tách, phần mềm RAN có thể chạy trên các bộ xử lý đa năng trong phần cứng COTS, từ đó mở rộng hơn nữa khả năng tương tác. Phần mềm RAN giờ đây có thể chạy trên bất kỳ phần cứng nào của nhà cung cấp. Vì phần mềm hóa được thực hiện trong RAN, các kỹ thuật tăng tốc trong phát triển phần mềm cũng có thể được triển khai, chẳng hạn như tích hợp liên tục và triển khai liên tục (CI/CD). Thời gian đưa RAN ra thị trường và triển khai có thể được rút ngắn.
+%     % ——————— Cột hình ———————
+%     \column{0.4\textwidth}
+%     \centering
+%     \includegraphics[height=6cm, keepaspectratio]{picture/disaggregation.PNG}
+%     \\[1ex]
+%   \end{columns}
+% \end{frame}
+
+\begin{frame}{Disaggregation}
+  \begin{columns}[T]
+    % ——————— Cột chữ ———————
+    \column{0.6\textwidth}
+    \vspace{0.6cm}
+    Phân tách RAN có tách RAN thành phần mềm và phần cứng hoặc chia nó theo chiều dọc và chiều ngang. 
+    
+    
+    Phần mềm và phần cứng của RAN từng là độc quyền và được tích hợp. Thông qua việc phân tách, thuật ngữ phần mềm hóa chức năng của RAN xuất hiện khi phần mềm không phụ thuộc vào phần cứng cụ thể và ngược lại.
+    % ——————— Cột hình ———————
+    \column{0.4\textwidth}
+    \centering
+    \includegraphics[height=6cm, keepaspectratio]{picture/nondisa_and_disa.png}
+    \\[1ex]
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Disaggregation}
+  \begin{columns}[T]
+    % ——————— Cột chữ ———————
+    \column{0.6\textwidth}
+    \vspace{0.6cm}
+    Phân tách RAN theo chiều dọc và chiều ngang cũng được gọi là phân tách chức năng. Phân tách chức năng theo chiều ngang là một quá trình lựa chọn mức độ tập trung hóa phù hợp trong khuôn khổ RAN. Nó phân tách BBU tích hợp thành hai đơn vị riêng biệt: Đơn vị Central Unit (CU) và Distributed Unit (DU). Phân tách chức năng theo chiều ngang cũng đề cập đến sự phân tách DU và RU. Mức độ tập trung hóa trong phân tách chức năng theo chiều ngang là linh hoạt. Tuy nhiên, cần cân nhắc các sự đánh đổi khi lựa chọn các tùy chọn phân tách chức năng này. Mặt khác, phân tách theo chiều dọc là sự phân tách giữa CP và UP của RAN.
+    % ——————— Cột hình ———————
+    \column{0.4\textwidth}
+    \centering
+    \includegraphics[height=6cm, keepaspectratio]{picture/split.png}
     \\[1ex]
   \end{columns}
 \end{frame}
